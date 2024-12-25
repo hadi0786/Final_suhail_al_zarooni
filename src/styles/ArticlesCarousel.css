@@ -1,8 +1,12 @@
 /* ArticlesCarousel.css */
 
-.article-section{
-    display: flex;
+/* General styling */
+body {
     font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #2c3e50;
 }
 
 /* Page header */
@@ -11,66 +15,44 @@ h2 {
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.2;
 }
 
 /* Category buttons */
 .category-buttons {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    font-family: "Poppins", sans-serif;
-}
-
-/* Adjust container and sections */
-.article-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Buttons container */
-.category-buttons {
-    display: flex;
-    justify-content: center;
     gap: 30px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-
-}
-
-.category-buttons .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease-in-out;
-    background-color: #4b0000;
-    font-family: "Poppins", sans-serif;
-    color: white;
-}
-
-/* Articles container */
-.row {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
 }
-
 
 .category-buttons .btn {
     font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
+    font-weight: 600;
+    padding: 12px 24px;
     border-radius: 25px;
-    transition: all 0.3s ease-in-out;
+    background-color: #4b0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .category-buttons .btn:hover {
     background-color: #001366;
-    color: #fff;
-    transform: scale(1.05);
+    transform: translateY(-2px);
 }
 
-/* Article cards grid */
+/* Article container styling */
+.article-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -78,13 +60,12 @@ h2 {
     gap: 20px;
 }
 
-/* Article card container */
+/* Article card */
 .article-card {
-    background: #ebeaea;
-    font-family: "Poppins", sans-serif;
+    background: #f7f5f5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     width: 100%;
     max-width: 350px;
@@ -92,25 +73,23 @@ h2 {
 
 .article-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Article card image */
 .article-card-image {
-    width: 300px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* Article card title */
 .article-card-title {
     font-size: 1.2rem;
     font-weight: 600;
     color: #001366;
     padding: 15px;
     text-transform: capitalize;
-    white-space: nowrap;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
@@ -119,22 +98,38 @@ h2 {
     font-size: 1.2rem;
     color: #001366;
     animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .article-card-image {
-        height: 150px;
-    }
+/* Carousel styling */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 0;
+}
 
-    .category-buttons .btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
+.carousel::-webkit-scrollbar {
+    display: none;
+}
 
-    h2 {
-        font-size: 2rem;
-    }
+.carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    scroll-behavior: smooth;
 }
 
 /* Fade-in animation */
@@ -147,32 +142,64 @@ h2 {
     }
 }
 
-/* Carousel container */
-.carousel {
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .category-buttons .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .article-card-image {
+        height: 150px;
+    }
+
+    .row {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-buttons {
+        gap: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .article-card-title {
+        font-size: 1rem;
+    }
+}
+
+/* Enable carousel for category buttons */
+.category-buttons {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 20px;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE */
     padding: 10px 0;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for a cleaner look */
+.category-buttons::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
 }
 
-.carousel-item {
-    flex: 0 0 auto; /* Prevent items from shrinking */
-    scroll-snap-align: center;
-    transition: transform 0.3s ease-in-out;
-    max-width: 300px;
-}
+/* On mobile screens */
+@media (max-width: 768px) {
+    .category-buttons {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        scroll-snap-type: x mandatory; /* Enable snapping to buttons */
+    }
 
-.carousel-item:hover {
-    transform: scale(1.05);
+    .btn {
+        flex: 0 0 auto; /* Ensure buttons don't shrink */
+        scroll-snap-align: center; /* Snap each button to center */
+    }
 }
-
-/* For smooth scrolling */
-.carousel {
-    scroll-behavior: smooth;
-}
-

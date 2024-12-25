@@ -34,16 +34,17 @@ const AllArticles = () => {
         <div className="article-section">
             {/* Buttons row */}
             <div className="category-buttons text-center">
-                {categories.map(category => (
-                    <button
-                        key={category}
-                        className="btn btn-primary"
-                        onClick={() => filterByCategory(category)}
-                    >
-                        {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </button>
-                ))}
-            </div>
+    {categories.map((category) => (
+        <button
+            key={category}
+            className="btn btn-primary"
+            onClick={() => filterByCategory(category)}
+        >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+        </button>
+    ))}
+</div>
+
 
             {/* Articles carousel */}
             <div className="carousel">
