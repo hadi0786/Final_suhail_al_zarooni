@@ -1,0 +1,631 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0; /* Remove any margins */
+  }
+  
+  .intro-video {
+    width: 100vw; /* Full viewport width */
+    height: 90vh; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Ensures the video scales correctly */
+  }
+  
+  
+  /* Logo Section */
+  .logo-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .logo-section-title {
+    font-size: 2.5rem;
+    font-family: "Old English Text MT", serif;
+    color: #001366;
+    margin-bottom: 20px;
+  }
+  
+  .logo-slider {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: inline-flex;
+    gap: 15px;
+  }
+  
+  .logo-item {
+    width: 210px;
+    height: 190px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-item:hover {
+    transform: scale(1.1);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .logo-slider {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Description Section */
+  .description-section {
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .description-text {
+    font-family: 'Georgia', serif;
+    font-size: 2.3rem;
+    color: #4b0000;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  
+  /* Grid Container */
+  .profile-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background-color: #800000; /* Maroon */
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Profile Image */
+  .profile-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid white;
+  }
+  
+  /* Profile Title */
+  .profile-title {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .subscribe-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00124e; /* Navy Blue Background */
+    padding: 20px;
+    color: white;
+  }
+  
+  .subscribe-buttons {
+    background-color: white;
+    color: #00124e;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .subscribe-buttons:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .subscribe-text {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Footer Styles */
+  .footer-section {
+    background-color: #fffcfc; /* Navy Blue Background */
+    color: #010854;
+    padding: 20px 40px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #010854;
+    padding-bottom: 20px;
+  }
+  
+  /* Footer Columns */
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Old English Text MT", serif;
+  }
+  
+  .footer-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: #010854;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #0b157a; /* Accent Color */
+  }
+  
+  /* Social Icons */
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .footer-logo {
+    max-width: 100px;
+    margin-top: 10px;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  .section-container {
+    display: flex;
+    justify-content: center; /* Centers all content horizontally */
+    flex-wrap: wrap; /* Allows items to wrap for smaller screens */
+    padding: 20px;
+    gap: 20px; /* Adds spacing between items */
+  }
+  
+  
+  .Left-card,
+  .Middle-card,
+  .right-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns child elements to the right */
+    gap: 10px;
+  }
+  
+  .card {
+    background-color: #800000;
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    padding: 10px;
+    text-align: right; /* Aligns text to the right */
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .Middle-card {
+    max-width: 350px; /* Ensures the middle image doesn't exceed this width */
+  }
+  
+  .middle {
+    width: 100%;
+    max-width: 350px;
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 20px;
+  }
+  
+  .card-image {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 350px;
+    height: auto; /* Maintains aspect ratio */
+  }
+  
+  .cardr {
+    background-color: #00124e;
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    padding: 10px;
+    text-align: right; /* Aligns text to the right */
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .card-text {
+    text-align: justify; /* Aligns text to the right */
+    font-size: 27px;
+  }
+  
+  @media (max-width: 768px) {
+    .section-container {
+      justify-content: center; /* Centers content on smaller screens */
+      gap: 15px;
+    }
+  
+    .Left-card,
+    .Middle-card,
+    .right-card {
+      align-items: center; /* Centers items for smaller screens */
+    }
+  
+    .card,
+    .cardr,
+    .middle,
+    .card-image {
+      width: 90%; /* Reduces width for smaller screens */
+    }
+  
+    .card-text {
+      font-size: 16px; /* Reduces font size for smaller screens */
+    }
+  }
+  
+  .Card-Section {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure full width of the screen */
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+  
+  .section-row {
+    display: flex;
+    justify-content: flex-end; /* Align all content to the right */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  }
+  
+  .section-row > div {
+    position: relative; /* To position the title over the image */
+  }
+  
+  .section-row img {
+    width: 213px;
+    max-width: 250px; /* Adjust as needed for image size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .card-title {
+    position: absolute; /* Overlap the image */
+    bottom: 0; /* Align at the bottom */
+    right: 0; /* Align at the right */
+    left: 0; /* Stretch across the image */
+    background-color: rgba(128, 0, 0, 0.8); /* Semi-transparent red */
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .Card-Section {
+      flex-direction: column; /* Stack rows vertically on smaller screens */
+    }
+  
+    .section-row {
+      justify-content: center; /* Center align content for better spacing */
+    }
+  }
+  
+  
+  .carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+  }
+  
+  .carousel-images {
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: 290px; /* Reduced height */
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 38%;
+    width: 300px; /* Adjusted size */
+    height: 250px; /* Adjusted size */
+    transform: translateX(-50%) scale(0.8);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
+  }
+  
+  .carousel-image.active {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+  
+  .carousel-image.next {
+    transform: translateX(25%) scale(0.9);
+    z-index: 2;
+  }
+  
+  .carousel-image.prev {
+    transform: translateX(-25%) scale(0.9);
+    z-index: 2;
+  }
+  
+  .carousel-button {
+    background-color: #00124e;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+    z-index: 4;
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .carousel-indicators span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #00124e;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-indicators span.active {
+    background-color: black;
+  }
+  
+  .media-title {
+    font-family: "Old English Text MT", serif;
+    text-align: center;
+    font-size: 36px; /* Slightly reduced size */
+    color: #00124e;
+  }
+  
+  .carousel-img-section {
+    padding: 20px; /* Reduced padding */
+  }
+  
+  .social-icon {
+    width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+  }
+
+
+
+  .stat-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    color: white;
+    background-color: #010854;
+    gap: 20px;
+    text-align: justify; /* Aligns text inside the section to the right */
+  }
+  
+  .left-section {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+    flex: 1;
+    justify-content: flex-end;
+    text-align: justify; /* Aligns text to the right */
+    max-width: 600px;
+  }
+  
+  .stat-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-align: justify; /* Aligns titles to the right */
+  }
+  
+  .stat-card {
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #002366;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-end; /* Aligns content in the card to the right */
+    text-align: justify;
+  }
+  
+  .card-img img {
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+  }
+  
+  .card-content {
+    text-align: left; /* Aligns text inside card content to the right */
+  }
+  
+  .card-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .stats-row {
+    display: flex;
+    justify-content: flex-end; /* Aligns stats to the right */
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .stat-title {
+    color: white;
+    font-style: italic;
+    text-align: right;
+  }
+  
+  .right-section {
+    flex: 0 0 auto;
+    max-width: 400px;
+    margin-left: auto;
+    text-align: right; /* Aligns the image and its container to the right */
+  }
+  
+  .right-section img {
+    width: 100%;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .stat-section {
+      flex-direction: column;
+      text-align: right; /* Keeps everything aligned right on smaller screens */
+    }
+  
+    .statcol {
+      display: flex;
+      justify-content: flex-end; /* Aligns columns to the right */
+    }
+  
+    .stat-card {
+      flex-direction: column;
+      align-items: flex-end; /* Aligns card content to the right */
+    }
+  
+    .stats-row {
+      display: flex;
+      justify-content: flex-end; /* Keeps stats aligned to the right */
+      align-items: center;
+      background-color: #001a66;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+  
+    .statcol {
+      flex: 1;
+      text-align: right; /* Aligns stats text to the right */
+      border-right: 2px solid white;
+    }
+  
+    .statcol:last-child {
+      border-right: none;
+    }
+  
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+    }
+  
+    .stat-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffd700;
+      margin-top: 5px;
+    }
+  
+    .card-img img {
+      width: 80%;
+    }
+  
+    .right-section {
+      margin-left: 0;
+      text-align: right;
+    }
+  }
+  
+  .golden {
+    color: #e4bf51;
+    text-align: right;
+  }
+  
+ .statcol{
+    display: flex;
+ } 
+ .statcol .stat-number{
+    font-size: 80px;
+    font-weight: bold;
+    color: #ffffff;
+ }
+ .statcol .stat-label{
+    color: #e4bf51;
+ }
+ .stats-row{
+    gap: 5px;
+ }

@@ -1,0 +1,179 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+     
+  }
+  .menu-icon{
+    display: none;
+  }
+  
+  /* Navbar Left */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 80px;
+    width: auto;
+  }
+  
+  /* Navbar Middle */
+  .navbar-middle {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .navbar-title {
+    font-size: 48px;
+    font-family: "Old English Text MT", serif;
+    color: #001366;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    font-size: 26px;
+    color: #001366;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+    color: #520000;
+  }
+  
+  /* Navbar Right */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .subscribe-button {
+    background-color: #520000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #001366;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .notification-icon img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .navbar {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .navbar-middle {
+      margin: 10px 0;
+    }
+  
+    .navbar-links {
+      gap: 10px;
+      justify-content: center;
+    }
+  
+    .subscribe-button {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+    
+    .navbar-right{
+        display: flex;
+    }
+  
+    .navbar-left {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .nav-link {
+      font-size: 16px;
+    }
+  
+    .subscribe-button {
+      width: 100%;
+      text-align: right;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .navbar-title {
+      font-size: 22px;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+
+    .navbar-right{
+        display: flex;
+    }
+  
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+  
+    .notification-icon img {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .subscribe-button {
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+  
+    .navbar-links {
+      display: none;
+    }
+  }
+  

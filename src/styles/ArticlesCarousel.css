@@ -1,0 +1,178 @@
+/* ArticlesCarousel.css */
+
+.article-section{
+    display: flex;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Page header */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+/* Category buttons */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Adjust container and sections */
+.article-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Buttons container */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+
+}
+
+.category-buttons .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    background-color: #4b0000;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+/* Articles container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.category-buttons .btn {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.category-buttons .btn:hover {
+    background-color: #001366;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Article cards grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Article card container */
+.article-card {
+    background: #ebeaea;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Article card image */
+.article-card-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Article card title */
+.article-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #001366;
+    padding: 15px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Loading spinner or message */
+.text-center {
+    font-size: 1.2rem;
+    color: #001366;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .article-card-image {
+        height: 150px;
+    }
+
+    .category-buttons .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Carousel container */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    scroll-snap-align: center;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+}
+
+/* For smooth scrolling */
+.carousel {
+    scroll-behavior: smooth;
+}
+
