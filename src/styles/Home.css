@@ -9,7 +9,23 @@ body {
     width: 100%;
     margin: 0; /* Remove any margins */
   }
-  
+   
+  .stat-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-align: justify; /* Aligns titles to the right */
+  }
+  .icon{
+    align-items: end;
+    font-size: 30px;
+
+  }
+  .vertical-line {
+    width: 2px;              /* Width of the vertical line */
+         /* Height of the vertical line */
+    background-color: rgb(255, 255, 255); /* Line color */
+    margin: 20px;            /* Optional margin for spacing */
+  }
   .intro-video {
     width: 100vw; /* Full viewport width */
     height: 90vh; /* Maintain aspect ratio */
@@ -74,10 +90,11 @@ body {
   
   .description-text {
     font-family: 'Georgia', serif;
-    font-size: 2.3rem;
+    font-size: 3rem;
     color: #4b0000;
     font-style: italic;
     line-height: 1.5;
+    margin: 0;
   }
   
   /* Grid Container */
@@ -142,8 +159,14 @@ body {
   }
   
   .subscribe-text {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 14px;
+    text-align: center;
+  }
+  
+  .fontSize {
+    /* margin-top: 10px; */
+    font-size: 18px;
     text-align: center;
   }
   
@@ -151,7 +174,7 @@ body {
   .footer-section {
     background-color: #fffcfc; /* Navy Blue Background */
     color: #010854;
-    padding: 20px 40px;
+    padding: 10px 40px;
   }
   
   .footer-content {
@@ -225,7 +248,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
   
   /* Responsive Design */
@@ -234,7 +257,10 @@ body {
       flex-direction: column;
       text-align: center;
     }
-  
+ .footer-socials{
+  align-items: center;
+  justify-content: center;
+ }
     .footer-bottom {
       flex-direction: column;
       text-align: center;
@@ -255,28 +281,31 @@ body {
   .right-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Aligns child elements to the right */
     gap: 10px;
+    flex: 0.33;
   }
   
   .card {
     background-color: #800000;
-    width: 100%;
-    max-width: 350px;
-    height: 200px;
-    padding: 10px;
+    /* width: 97%; */
+    /* max-width: 350px; */
+    height: 100%;
+    padding: 20px;
     text-align: right; /* Aligns text to the right */
     color: white;
-    border-radius: 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-self: center
   }
   
   .Middle-card {
-    max-width: 350px; /* Ensures the middle image doesn't exceed this width */
+
   }
   
   .middle {
     width: 100%;
-    max-width: 350px;
+    /* max-width: 350px; */
     height: auto; /* Maintains aspect ratio */
     border-radius: 20px;
   }
@@ -284,24 +313,28 @@ body {
   .card-image {
     border-radius: 20px;
     width: 100%;
-    max-width: 350px;
+    /* max-width: 350px; */
     height: auto; /* Maintains aspect ratio */
   }
   
   .cardr {
     background-color: #00124e;
-    width: 100%;
-    max-width: 350px;
-    height: 200px;
-    padding: 10px;
+    /* width: 97%; */
+    /* max-width: 350px; */
+    height: 100%;
+    padding: 20px;
     text-align: right; /* Aligns text to the right */
     color: white;
-    border-radius: 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-self: center
   }
   
   .card-text {
     text-align: justify; /* Aligns text to the right */
     font-size: 27px;
+
   }
   
   @media (max-width: 768px) {
@@ -322,22 +355,33 @@ body {
     .card-image {
       width: 90%; /* Reduces width for smaller screens */
     }
-  
     .card-text {
       font-size: 16px; /* Reduces font size for smaller screens */
     }
   }
   
   .Card-Section {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     width: 100%; /* Ensure full width of the screen */
     box-sizing: border-box; /* Includes padding in width calculation */
   }
+  .serv ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    height: 100%;
+    margin: 0;
+  }
   
+  .serv li {
+    flex: 0 0 20%;
+    /* outline: 1px solid; */
+  }
   .section-row {
     display: flex;
-    justify-content: flex-end; /* Align all content to the right */
+  
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
   }
   
@@ -346,21 +390,26 @@ body {
   }
   
   .section-row img {
-    width: 213px;
-    max-width: 250px; /* Adjust as needed for image size */
+width: 100%;
     height: auto; /* Maintain aspect ratio */
   }
+  .serv img {
+    width: 100%;
+        height: auto; /* Maintain aspect ratio */
+      }
   
   .card-title {
-    position: absolute; /* Overlap the image */
-    bottom: 0; /* Align at the bottom */
-    right: 0; /* Align at the right */
-    left: 0; /* Stretch across the image */
-    background-color: rgba(128, 0, 0, 0.8); /* Semi-transparent red */
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(128, 0, 0, 0.8);
     color: white;
     font-size: 14px;
     text-align: center;
     padding: 5px 10px;
+    margin-top: -29px;
+    z-index: 1;
   }
   
   @media (max-width: 768px) {
@@ -432,21 +481,23 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+  
   }
   
   .carousel-indicators span {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     margin: 0 5px;
-    background-color: #00124e;
+    background-color: #fff;
+    border:6px solid #00124e;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .carousel-indicators span.active {
-    background-color: black;
+    background-color: #00124e;
   }
   
   .media-title {
@@ -470,7 +521,7 @@ body {
   .stat-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end; /* Aligns content to the right */
+    justify-content: space-around; /* Aligns content to the right */
     align-items: center;
     color: white;
     background-color: #010854;
@@ -483,9 +534,10 @@ body {
     padding-left: 40px;
     padding-top: 40px;
     flex: 1;
-    justify-content: flex-end;
+    justify-content: start;
+    width: 100%;
     text-align: justify; /* Aligns text to the right */
-    max-width: 600px;
+    /* max-width: 600px; */
   }
   
   .stat-title h2 {
@@ -500,10 +552,11 @@ body {
     color: #002366;
     padding: 15px;
     border-radius: 10px;
+    width: 560px;
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
-    justify-content: flex-end; /* Aligns content in the card to the right */
+    justify-content:start; /* Aligns content in the card to the right */
     text-align: justify;
   }
   
@@ -512,13 +565,30 @@ body {
     height: 150px;
     border-radius: 10px;
   }
-  
+  .dot-container {
+    display: flex;
+    width: 560px;
+    flex-wrap: wrap;      /* Allow dots to wrap onto the next line */
+    justify-content: center; /* Centers the dots */
+    gap: 10px;           /* Adds space between dots */
+  }
+
+  .dot {
+    width: 20px;                /* Size of each dot */
+    height: 20px;
+    background-color: #ffffff;  /* Color of the dot */
+    border-radius: 50%;         /* Makes each dot circular */
+  }
+  .dot-active{
+    background-color:#e4bf51;
+  }
   .card-content {
     text-align: left; /* Aligns text inside card content to the right */
   }
   
   .card-content h4 {
     font-size: 1.2rem;
+    margin-top: 4px;
     margin-bottom: 10px;
   }
   
@@ -529,7 +599,7 @@ body {
   
   .stats-row {
     display: flex;
-    justify-content: flex-end; /* Aligns stats to the right */
+    justify-content: start; /* Aligns stats to the right */
     text-align: right;
     margin-top: 20px;
   }
@@ -565,7 +635,7 @@ body {
   
     .stat-card {
       flex-direction: column;
-      align-items: flex-end; /* Aligns card content to the right */
+ width: 100% !important;
     }
   
     .stats-row {
@@ -582,7 +652,7 @@ body {
       text-align: right; /* Aligns stats text to the right */
       border-right: 2px solid white;
     }
-  
+    
     .statcol:last-child {
       border-right: none;
     }
@@ -598,10 +668,69 @@ body {
       font-weight: 500;
       color: #ffd700;
       margin-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   
+ .stats-row{
+  gap: 5px;
+  flex-direction: column;
+}
+.dot-container{
+width: 100%;
+}
+.vertical-line{
+
+background-color:#001a66;
+}
+.serv ul{
+flex-wrap: nowrap;
+}
+.middle{
+height: 100%;
+object-fit: cover;
+}
+.card-image{
+height: 100%;
+object-fit: cover;
+}
+.left-section{
+width: 100%;
+padding: 0;
+}
+
+.stat-title{
+width: 100%;
+}
+.stat-card{
+padding: 0;
+margin: 0rem;
+}
+.card-img{
+width: 100%;
+}  .card-content {
+text-align: center; /* Aligns text inside card content to the right */
+}
+.icon{
+align-items: end;
+display: flex
+;
+justify-content: end;
+padding:1rem
+}
+.dot-container{
+margin-top: 1rem;
+}
+.intro-video{
+height: auto;
+}
+.stat-title h2 {
+font-size: 1.5rem;
+text-align: center;
+}
     .card-img img {
-      width: 80%;
+      width: 100%;
     }
   
     .right-section {
@@ -617,6 +746,7 @@ body {
   
  .statcol{
     display: flex;
+    gap: 1rem;
  } 
  .statcol .stat-number{
     font-size: 80px;
@@ -625,7 +755,13 @@ body {
  }
  .statcol .stat-label{
     color: #e4bf51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
- .stats-row{
-    gap: 5px;
+ 
+
+ .middle{
+  height: 100%;
+  object-fit: cover;
  }

@@ -36,14 +36,21 @@
     font-family: "Old English Text MT", serif;
     color: #001366;
     font-weight: bold;
-    margin: 0;
+   margin-bottom: 2rem;
   }
   
   .navbar-links {
     display: flex;
-    gap: 15px;
+    gap: 3rem;
     justify-content: center;
     flex-wrap: wrap;
+  }
+  
+  .navbar-links-active {
+   text-decoration: underline !important;
+   color: #520000 !important;
+
+   text-underline-offset: 8px;
   }
   
   .nav-link {
@@ -62,7 +69,7 @@
   .navbar-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
   }
   
   .subscribe-button {
@@ -70,7 +77,11 @@
     color: white;
     border: none;
     padding: 8px 12px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s, box-shadow 0.3s;
