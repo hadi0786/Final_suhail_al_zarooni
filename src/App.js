@@ -13,6 +13,8 @@ import StatSection from "./components/Home/stats";
 import About from "./components/About/About";
 import Event from "./components/events/event";
 import Article from "./AllArticle";
+import Login from "./components/Dashboard/Login";
+import AdminDashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/st" element={<StatSection />} />
           <Route path="/ab" element={<About />} />
           <Route path="/ev" element={<Event />} />
+          <Route path="/adminlogin" element={<Login />} />
+          <Route path="/admindashboard" element={<AdminDashboard/>} />
           <Route path="*" element={<Navigate to="/home" replace={true} />} />
         </Routes>
       </div>

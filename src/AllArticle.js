@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './AllArticle.css'; // Add some custom styles
+import './AllArticle.css';
 
 const Article = () => {
   const [articles, setArticles] = useState([]);
@@ -32,8 +32,8 @@ const Article = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="title">Articles</h1>
+    <div className="article-container">
+      <h1 className="page-title">All Articles</h1>
       <div className="cards-container">
         {articles.map((article) => (
           <div key={article._id} className="card">
@@ -41,12 +41,15 @@ const Article = () => {
             <div className="card-content">
               <h2 className="card-title">{article.title}</h2>
               <p className="card-category">Category: {article.category}</p>
-              <p className="card-content-text">{article.content}</p>
+              <div 
+                className="card-text"
+                dangerouslySetInnerHTML={{ __html: article.content }} 
+              />
               <button 
                 className="delete-button"
                 onClick={() => deleteArticle(article._id)}
               >
-                Delete
+                🗑 Delete
               </button>
             </div>
           </div>

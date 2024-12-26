@@ -17,7 +17,7 @@ const AddArticle = () => {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('category', category);
-        formData.append('content', content); // Rich text content
+        formData.append('content', content);
         formData.append('image', image);
 
         try {
@@ -35,15 +35,14 @@ const AddArticle = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="card shadow-sm p-4" style={{ maxWidth: '700px', margin: 'auto' }}>
-                <h2 className="text-center mb-4">Add Article</h2>
+        <div className="article-container">
+            <div className="article-card">
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group mb-3">
-                        <label htmlFor="title" className="form-label">Title</label>
+                    <div className="article-form-group">
+                        <label htmlFor="title" className="article-label">Title</label>
                         <input
                             type="text"
-                            className="form-control"
+                            className="article-input"
                             id="title"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
@@ -51,10 +50,10 @@ const AddArticle = () => {
                             required
                         />
                     </div>
-                    <div className="form-group mb-3">
-                        <label htmlFor="category" className="form-label">Category</label>
+                    <div className="article-form-group">
+                        <label htmlFor="category" className="article-label">Category</label>
                         <select
-                            className="form-control"
+                            className="article-select"
                             id="category"
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
@@ -66,54 +65,53 @@ const AddArticle = () => {
                             <option value="collection">Collection</option>
                             <option value="museum">Museum</option>
                             <option value="media">Media</option>
-                            <option value="update">update</option>
+                            <option value="update">Update</option>
                         </select>
                     </div>
-                    <div className="form-group mb-3">
-    <label htmlFor="content" className="form-label">Content</label>
-    <ReactQuill
-        theme="snow"
-        value={content}
-        onChange={setContent}
-        modules={{
-            toolbar: [
-                [{ header: [1, 2, 3, false] }],
-                ['bold', 'italic', 'underline', 'strike'], // text styling
-                [{ list: 'ordered' }, { list: 'bullet' }], // lists
-                ['link', 'image'], // links and images
-                ['clean'], // remove formatting
-            ],
-        }}
-        formats={[
-            'header',
-            'bold',
-            'italic',
-            'underline',
-            'strike',
-            'list',
-            'bullet',
-            'link',
-            'image',
-        ]}
-        style={{ height: '200px', marginBottom: '20px' }} // Adds extra spacing below the editor
-    />
-</div>
-<div className="form-group mb-3">
-    <label htmlFor="image" className="form-label">Image</label>
-    <input
-        type="file"
-        className="form-control"
-        id="image"
-        onChange={(e) => setImage(e.target.files[0])}
-        required
-    />
-</div>
-
-                    <div className="text-center">
-                        <button type="submit" className="btn btn-primary w-50">Submit</button>
+                    <div className="article-form-group">
+                        <label htmlFor="content" className="article-label">Content</label>
+                        <ReactQuill
+                            theme="snow"
+                            value={content}
+                            onChange={setContent}
+                            modules={{
+                                toolbar: [
+                                    [{ header: [1, 2, 3, false] }],
+                                    ['bold', 'italic', 'underline', 'strike'],
+                                    [{ list: 'ordered' }, { list: 'bullet' }],
+                                    ['link', 'image'],
+                                    ['clean'],
+                                ],
+                            }}
+                            formats={[
+                                'header',
+                                'bold',
+                                'italic',
+                                'underline',
+                                'strike',
+                                'list',
+                                'bullet',
+                                'link',
+                                'image',
+                            ]}
+                            style={{ height: '200px', marginBottom: '20px' }}
+                        />
+                    </div>
+                    <div className="article-form-group">
+                        <label htmlFor="image" className="article-label">Image</label>
+                        <input
+                            type="file"
+                            className="article-file-input"
+                            id="image"
+                            onChange={(e) => setImage(e.target.files[0])}
+                            required
+                        />
+                    </div>
+                    <div className="article-submit-wrapper">
+                        <button type="submit" className="article-submit-button">Submit</button>
                     </div>
                 </form>
-                {message && <p className="text-center text-success mt-3">{message}</p>}
+                {message && <p className="article-message">{message}</p>}
             </div>
         </div>
     );
