@@ -61,11 +61,12 @@ const AddArticle = () => {
                             required
                         >
                             <option value="">Select Category</option>
-                            <option value="Al Zarooni Events">Event</option>
-                            <option value="Al Zarooni Foundation">Foundation</option>
-                            <option value="Al Zarooni Collection">Collection</option>
-                            <option value="Al Zarooni Museum">Museum</option>
-                            <option value="Al Zarooni Media">Media</option>
+                            <option value="event">Event</option>
+                            <option value="foundation">Foundation</option>
+                            <option value="collection">Collection</option>
+                            <option value="museum">Museum</option>
+                            <option value="media">Media</option>
+                            <option value="update">update</option>
                         </select>
                     </div>
                     <div className="form-group mb-3">

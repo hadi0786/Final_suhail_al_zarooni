@@ -91,6 +91,30 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
             res.status(500).json({ message: 'Server error' });
         }
     });
+
+    const SubscriptionSchema = new mongoose.Schema({
+        email: { type: String, required: true, unique: true },
+        subscribedAt: { type: Date, default: Date.now },
+      });
+      
+      const Subscription = mongoose.model('Subscription', SubscriptionSchema);
+      
+      app.post('/subscribe', async (req, res) => {
+        const { email } = req.body;
+        if (!email) {
+          return res.status(400).json({ message: "Email is required" });
+        }
+      
+        try {
+          const newSubscription = new Subscription({ email });
+          await newSubscription.save();
+          res.status(201).json({ message: "Subscription successful!" });
+        } catch (err) {
+          console.error("Error saving subscription:", err);
+          res.status(500).json({ message: "Server error" });
+        }
+      });
+      
     
 
 // Start the server

@@ -1,66 +1,68 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import "../../styles/Carousel.css";
 import "../../styles/ArticlesCarousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 const AllArticles = () => {
   const settings = {
     dots: false,
     infinite: true,
-    lazyLoad: 'ondemand',
+    lazyLoad: "ondemand",
     centerMode: true,
-    centerPadding: '100px',
-    
-    speed: 100, // Speed of the transition
+    centerPadding: "100px",
+    speed: 100,
     slidesToShow: 4,
     slidesToScroll: 4,
-    arrows: false, // Show next/prev arrows
+    arrows: false,
     responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: false
-          }
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
         },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   const [articles, setArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const categories = [
-    "Al Zarooni Foundation",
-    "Al Zarooni Events",
-    "Al Zarooni Media",
-    "Al Zarooni Museum",
-    "Al Zarooni Collection",
+    { label: "Al Zarooni Foundation", value: "foundation" },
+    { label: "Al Zarooni Events", value: "event" },
+    { label: "Al Zarooni Media", value: "media" },
+    { label: "Al Zarooni Museum", value: "museum" },
+    { label: "Al Zarooni Collection", value: "collection" },
   ];
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const response = await axios.get("http://localhost:5000/articles");
-        setArticles(response.data.data);
+        const fetchedArticles = response.data.data;
+        setArticles(fetchedArticles);
+        setFilteredArticles(fetchedArticles.slice(0, 6)); // Default to first 6 articles
         setLoading(false);
       } catch (error) {
         console.error("Error fetching articles:", error);
@@ -71,10 +73,14 @@ const AllArticles = () => {
   }, []);
 
   const filterByCategory = (category) => {
-    const filtered = articles.filter(
-      (article) => article.category === category
-    );
-    setArticles(filtered);
+    if (category) {
+      const filtered = articles.filter(
+        (article) => article.category === category
+      );
+      setFilteredArticles(filtered.slice(0, 6)); // Limit to 6 articles
+    } else {
+      setFilteredArticles(articles.slice(0, 6)); // Default to first 6 articles
+    }
   };
 
   if (loading) {
@@ -87,43 +93,24 @@ const AllArticles = () => {
       <div className="category-buttons text-center">
         {categories.map((category) => (
           <button
-            key={category}
+            key={category.value}
             className="btn btn-primary"
-            onClick={() => filterByCategory(category)}
+            onClick={() => filterByCategory(category.value)}
           >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {category.label}
           </button>
         ))}
       </div>
-      {/* Articles carousel */}
-      {/* <div className="carousel">
-                {articles.length === 0 ? (
-                    <div className="text-center">No articles available for this category.</div>
-                ) : (
-                    articles.map((article) => (
-                        <div className="carousel-item" key={article._id}>
-                            <div className="article-card">
-                                <img
-                                    src={article.imageUrl}
-                                    alt={article.title}
-                                    className="article-card-image"
-                                />
-                                <div className="article-card-title">{article.title}</div>
-                            </div>
-                        </div>
-                    ))
-                )}
-            </div> */}
       <div className="carousel-container">
-        {articles.length === 0 ? (
+        {filteredArticles.length === 0 ? (
           <div className="text-center">
             No articles available for this category.
           </div>
         ) : (
           <Slider {...settings}>
-            {articles.map((article) => (
-              <div className="carousel-item">
-              <div className="article-card">
+            {filteredArticles.map((article) => (
+              <div key={article.id} className="carousel-item">
+                <div className="article-card">
                   <img
                     src={article.imageUrl}
                     alt={article.title}
@@ -135,7 +122,7 @@ const AllArticles = () => {
             ))}
           </Slider>
         )}
-      </div>{" "}
+      </div>
     </div>
   );
 };

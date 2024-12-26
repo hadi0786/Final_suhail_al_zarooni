@@ -1,0 +1,113 @@
+
+
+.detail {
+    font-size: 36px;
+    color: #520000; /* Adjusted to match a darker background image */
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.5;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    
+}
+
+
+.logo-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-desc-sec {
+    flex: 1;
+    max-width: 60%;
+}
+
+.logo-detail {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #000000; /* Matches the background */
+    font-family: 'Poppins', sans-serif;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-carousel {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.logo-item {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white for dark background */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.nav-button {
+    background: #520000; /* Contrasts with dark background */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-button:hover {
+    background: #ffffff;
+    color: #520000;
+}
+
+.Zarooni-img {
+    flex: 1;
+    max-width: 35%;
+    text-align: center;
+}
+
+.Zarooni-img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .logo-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-desc-sec, .Zarooni-img {
+        max-width: 100%;
+    }
+
+    .detail {
+        font-size: 24px;
+    }
+
+    .logo-detail {
+        font-size: 16px;
+    }
+}
