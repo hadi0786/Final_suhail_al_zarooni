@@ -32,7 +32,7 @@ const Navbar = () => {
         <img src="/logo.png" alt="Logo" className="logo" />
       </div>
       <div className="navbar-middle">
-        <div className="navbar-title">Suhail Al Zarooni</div>
+        <div className="navbar-title">Suhail Mohammad Al Zarooni</div>
         {/* Hide links on smaller screens */}
         <div className="navbar-links desktop-only">
           <Link

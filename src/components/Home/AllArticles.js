@@ -82,8 +82,6 @@ const AllArticles = () => {
 >
   {article.title}
 </h3>
-
-                <p className="article-card-description">{article.description}</p>
               </div>
             </div>
           ))}
