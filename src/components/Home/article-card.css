@@ -49,19 +49,13 @@
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
-  .card-sec {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .cards {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row; /* Stack items vertically */
   }
 
   .card1,
   .card2 {
-    max-width: 90%; /* Almost full width with a slight margin */
-    height: auto; /* Adjust height to content on smaller screens */
+    width: 90%; /* Use 90% of the screen width on mobile */
+    max-width: 300px; /* Limit the maximum width */
   }
 }

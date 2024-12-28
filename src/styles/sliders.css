@@ -1,3 +1,10 @@
+/* General Overflow Prevention */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* Category Buttons */
 .category-buttons-container {
   display: flex;
@@ -63,7 +70,14 @@
   font-weight: bold;
   margin: 10px 0;
   text-transform: capitalize;
+  white-space: nowrap; /* Prevent line wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add '...' for overflowing text */
+  max-width: 90%; /* Set a max width to control text layout */
+  cursor: pointer; /* Show pointer for tooltip indication */
 }
+
+
 
 .article-card-description {
   font-size: 14px;

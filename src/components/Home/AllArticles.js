@@ -40,6 +40,10 @@ const AllArticles = () => {
     }
   };
 
+  const truncateTitle = (title, maxLength = 50) => {
+    return title.length > maxLength ? `${title.substring(0, maxLength)}...` : title;
+  };
+
   if (loading) {
     return <div className="loading-container">Loading...</div>;
   }
@@ -72,7 +76,13 @@ const AllArticles = () => {
                 className="article-card-image"
               />
               <div className="article-card-content">
-                <h3 className="article-card-title">{article.title}</h3>
+              <h3
+  className="article-card-title"
+  title={article.title} /* Tooltip for full title */
+>
+  {article.title}
+</h3>
+
                 <p className="article-card-description">{article.description}</p>
               </div>
             </div>

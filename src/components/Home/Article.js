@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../styles/ArticlesCarousel.css'; // Add necessary styles for the carousel
+import BASE_URL from '../../BaseUrl';
 
 const ArticlesCarousel = () => {
   const [articles, setArticles] = useState([]);
@@ -12,7 +13,7 @@ const ArticlesCarousel = () => {
     // Fetch articles from the backend
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/articles');
+        const response = await axios.get(`${BASE_URL}/articles`);
         // Validate response data
         const data = Array.isArray(response.data) ? response.data : [];
         setArticles(data);

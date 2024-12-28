@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import BASE_URL from '../../BaseUrl';
 
 const ArticlesPage = () => {
   const [articles, setArticles] = useState([]);
@@ -10,7 +11,7 @@ const ArticlesPage = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/articles");
+        const response = await axios.get(`${BASE_URL}/articles`);
         const filteredArticles = response.data.data.filter(
           (article) => article.category.toLowerCase() === "update"
         );
