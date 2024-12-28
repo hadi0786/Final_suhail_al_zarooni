@@ -265,8 +265,8 @@
     z-index: 1000;
     background: white;
     padding: 15px;
-    width: 90%; /* Adjusts to fit within the viewport */
-    max-width: 400px; /* Ensures a maximum width for larger screens */
+    width: 90%; /* Ensures the modal fits within the viewport */
+    max-width: 500px; /* Maximum width for larger screens */
     border-radius: 10px; /* Adds smooth rounded corners */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
     overflow: hidden; /* Prevents content overflow */
@@ -280,7 +280,7 @@
   }
   
   .modal input {
-    width: 90%; /* Ensures inputs fit neatly within the modal */
+    width: 100%; /* Ensures inputs fit neatly within the modal */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -325,23 +325,33 @@
   @media (max-width: 768px) {
     .modal {
       width: 90%; /* Utilizes most of the screen width */
-      max-width: 90%; /* Overrides max-width for small devices */
+      max-width: 90%; /* Ensures modal doesn't exceed the screen width */
       padding: 20px; /* Adequate padding for touch interactions */
+      border-radius: 8px; /* Slightly rounded corners for smaller screens */
     }
   
     .modal input {
       width: 100%; /* Full width of the modal */
+      font-size: 14px; /* Slightly smaller font size on mobile for better fit */
     }
   
     .modal button {
       width: 100%; /* Full-width buttons for easier interaction */
+      padding: 12px; /* More padding for easier tapping */
+      font-size: 14px; /* Adjust font size to make it mobile-friendly */
       text-align: center;
     }
   
     .close {
       top: 5px;
       right: 5px;
-      font-size: 18px;
+      font-size: 18px; /* Slightly smaller close button */
+    }
+  
+    .navbar-links {
+      flex-direction: column; /* Stack navbar links vertically on mobile */
+      gap: 10px;
+      align-items: center;
     }
   }
   

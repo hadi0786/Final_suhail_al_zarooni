@@ -1,49 +1,52 @@
-
-
 .detail {
-    font-size: 36px;
+    font-size: 32px;
     color: #520000; /* Adjusted to match a darker background image */
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    
+    margin-bottom: 20px;
 }
-
 
 .logo-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* Centered content for smaller screens */
     align-items: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .logo-desc-sec {
     flex: 1;
     max-width: 60%;
+    text-align: center;
 }
 
 .logo-detail {
-    font-size: 22px;
+    font-size: 20px;
     text-align: justify;
     color: #000000; /* Matches the background */
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
 }
 
 .logos {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .logo-carousel {
     display: flex;
     gap: 10px;
     overflow: hidden;
+    justify-content: center;
 }
 
 .logo-item {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* Reduced for smaller screens */
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,26 +88,73 @@
 
 .Zarooni-img img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px; /* Adjusted for responsiveness */
     height: auto;
     border-radius: 8px;
 }
 
 @media (max-width: 768px) {
-    .logo-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo-desc-sec, .Zarooni-img {
-        max-width: 100%;
-    }
-
     .detail {
         font-size: 24px;
     }
 
+    .logo-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-desc-sec {
+        max-width: 100%;
+        text-align: center;
+    }
+
     .logo-detail {
         font-size: 16px;
+        padding: 0 10px;
     }
+
+    .logo-item {
+        width: 100px; /* Adjusted for smaller screens */
+        height: 100px;
+    }
+    
+    .Zarooni-img{
+        display: none;
+
+    }
+    .Zarooni-mobile-img {
+        display: block; /* Ensures the element is visible */
+        margin: 0 auto; /* Centers the element horizontally */
+        text-align: center; /* Centers content inside the element */
+        max-width: 100%; /* Ensures it scales responsively */
+    }    
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .logo-item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .detail {
+        font-size: 18px;
+    }
+    .Zarooni-img{
+        display: none;
+
+    }
+    .Zarooni-mobile-img {
+        display: block; /* Ensures the element is visible */
+        margin: 0 auto; /* Centers the element horizontally */
+        text-align: center; /* Centers content inside the element */
+        max-width: 100%; /* Ensures it scales responsively */
+    }    
+}
+.Zarooni-mobile-img{
+    display: none;
 }

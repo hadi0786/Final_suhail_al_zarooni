@@ -49,6 +49,9 @@ function About() {
         <div className="detail">
           Suhail Mohammed Al Zaroon first ever Emirati after the Royal family of United Arab Emirates (UAE) to be Awarded with a Guinness World Record Holder's Certificate Twice.
         </div>
+        <div className="Zarooni-mobile-img">
+            <img src="/profile.png" alt="Suhail Mohammed Al Zarooni" />
+        </div>
 
         <div className="logo-section">
           <div className="logo-desc-sec">

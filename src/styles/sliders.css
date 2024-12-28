@@ -9,17 +9,18 @@ body {
 .category-buttons-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  flex-wrap: wrap; /* Ensure buttons wrap to the next line if necessary */
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .category-button {
   background-color: #800000; /* Dark red color */
   color: white;
-  padding: 10px 20px;
+  padding: 8px 15px; /* Adjust padding for smaller screens */
   border-radius: 25px;
   border: none;
-  font-size: 16px;
+  font-size: 14px; /* Adjust font size */
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -77,8 +78,6 @@ body {
   cursor: pointer; /* Show pointer for tooltip indication */
 }
 
-
-
 .article-card-description {
   font-size: 14px;
   color: #555;
@@ -96,11 +95,21 @@ body {
   .articles-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
+
+  .category-button {
+    font-size: 13px; /* Reduce font size */
+    padding: 6px 12px; /* Adjust padding for smaller buttons */
+  }
 }
 
 @media (max-width: 480px) {
   .articles-container {
     grid-template-columns: 1fr; /* Single column on extra small screens */
+  }
+
+  .category-button {
+    font-size: 12px; /* Further reduce font size for extra small screens */
+    padding: 5px 10px;
   }
 }
 
@@ -119,3 +128,7 @@ body {
   width: 90%; /* Make the cards fit nicely in the slider */
 }
 
+/* Remove Slider Animation */
+.swiper-container .swiper-slide {
+  transition: none; /* Disable slide animation */
+}
