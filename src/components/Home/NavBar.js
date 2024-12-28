@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import '../../styles/NavBar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [active, setActive] = useState("home");
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const location = useLocation();
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const currentLink = (val) => {
-    setActive(val);
+    setShowModal(!showModal); // Show the navigation modal
   };
 
   const handleSubscribe = async () => {
@@ -34,81 +33,74 @@ const Navbar = () => {
       </div>
       <div className="navbar-middle">
         <div className="navbar-title">Suhail Mohammad Al Zarooni</div>
-        <div className="navbar-links">
-          <a
-            href="#home"
-            className={active === "home" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("home")}
+        {/* Hide links on smaller screens */}
+        <div className="navbar-links desktop-only">
+          <Link
+            to="/home"
+            className={location.pathname === "/home" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Home
-          </a>
-          <a
-            href="#about"
-            className={active === "about" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("about")}
+          </Link>
+          <Link
+            to="/about"
+            className={location.pathname === "/about" ? "navbar-links-active nav-link" : "nav-link"}
           >
             About
-          </a>
-          <a
-            href="#events"
-            className={active === "events" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("events")}
+          </Link>
+          <Link
+            to="/event"
+            className={location.pathname === "/event" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Events
-          </a>
-          <a
-            href="#foundation"
-            className={active === "foundation" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("foundation")}
+          </Link>
+          <Link
+            to="/foundation"
+            className={location.pathname === "/foundation" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Foundation
-          </a>
-          <a
-            href="#museum"
-            className={active === "museum" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("museum")}
+          </Link>
+          <Link
+            to="/museum"
+            className={location.pathname === "/museum" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Museum
-          </a>
-          <a
-            href="#media"
-            className={active === "media" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("media")}
+          </Link>
+          <Link
+            to="/media"
+            className={location.pathname === "/media" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Media
-          </a>
-          <a
-            href="#collection"
-            className={active === "collection" ? "navbar-links-active nav-link" : "nav-link"}
-            onClick={() => currentLink("collection")}
+          </Link>
+          <Link
+            to="/collection"
+            className={location.pathname === "/collection" ? "navbar-links-active nav-link" : "nav-link"}
           >
             Collection
-          </a>
+          </Link>
         </div>
       </div>
       <div className="navbar-right">
         <span className="menu-icon" onClick={toggleMenu}>&#9776;</span>
         <button className="subscribe-button" onClick={() => setShowModal(true)}>SUBSCRIBE</button>
         <span className="notification-icon">
-        <img src="/notification-bell.png" alt="Notifications" />
+          <img src="/notification-bell.png" alt="Notifications" />
         </span>
       </div>
 
-      {/* Modal */}
-      {showModal && (
-        <div className="modal">
+      {/* Modal for Navigation Links */}
+      {showModal && isMenuOpen && (
+        <div className="modal full-screen-modal">
           <div className="modal-content">
-            <span className="close" onClick={() => setShowModal(false)}>&times;</span>
-            <h2>Subscribe</h2>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button onClick={handleSubscribe}>Subscribe</button>
-            {message && <p>{message}</p>}
+            <span className="close" onClick={toggleMenu}>&times;</span>
+            <div className="modal-links">
+              <Link to="/home" onClick={toggleMenu}>Home</Link>
+              <Link to="/about" onClick={toggleMenu}>About</Link>
+              <Link to="/event" onClick={toggleMenu}>Events</Link>
+              <Link to="/foundation" onClick={toggleMenu}>Foundation</Link>
+              <Link to="/museum" onClick={toggleMenu}>Museum</Link>
+              <Link to="/media" onClick={toggleMenu}>Media</Link>
+              <Link to="/collection" onClick={toggleMenu}>Collection</Link>
+            </div>
           </div>
         </div>
       )}

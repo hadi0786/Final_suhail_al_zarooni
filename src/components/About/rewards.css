@@ -1,4 +1,73 @@
-.title{
+.title {
     display: flex;
     gap: 30px;
-}
+  }
+  
+  .rewards-section {
+    background-color: #00114d; /* Navy blue background */
+    color: #fff;
+    padding: 20px 60px;
+  }
+  
+  .rewards-section h2 {
+    text-align: left;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .rewards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+  }
+  
+  .reward-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .reward-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .reward-item h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .reward-item p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* Mobile-specific styling */
+  @media (max-width: 768px) {
+    .rewards-section {
+      padding: 20px 15px;
+    }
+  
+    .rewards-list {
+      gap: 15px;
+    }
+  
+    .reward-item {
+      padding: 15px 0;
+    }
+  
+    .reward-item h3 {
+      font-size: 1.1rem;
+    }
+  
+    .reward-item h4 {
+      font-size: 0.95rem;
+    }
+  
+    .reward-item p {
+      font-size: 0.85rem;
+    }
+  }
+  

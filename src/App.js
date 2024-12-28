@@ -13,8 +13,13 @@ import StatSection from "./components/Home/stats";
 import About from "./components/About/About";
 import Event from "./components/events/event";
 import Article from "./AllArticle";
+import Hero from "./components/events/Hero-sec";
 import Login from "./components/Dashboard/Login";
 import AdminDashboard from "./components/Dashboard/Dashboard";
+import Collection from "./components/events/Collection";
+import Museum from "./components/events/Museum"
+import Media from "./components/events/Media"
+import Foundation from "./components/events/foundation"
 
 function App() {
   return (
@@ -24,13 +29,15 @@ function App() {
           <Route path="/article" element={<AddArticle />} />
           <Route path="/al" element={<Article />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/ar" element={<ArticlesCarousel />} />
-          <Route path="/st" element={<StatSection />} />
-          <Route path="/ab" element={<About />} />
-          <Route path="/ev" element={<Event />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/collection" element={<Collection />} />
+          <Route path="/foundation" element={<Foundation />} />
+          <Route path="/museum" element={<Museum />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="*" element={<Navigate to="/home" replace={true} />} />
           <Route path="/adminlogin" element={<Login />} />
           <Route path="/admindashboard" element={<AdminDashboard/>} />
-          <Route path="*" element={<Navigate to="/home" replace={true} />} />
         </Routes>
       </div>
     </Router>

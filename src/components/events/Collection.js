@@ -3,8 +3,9 @@ import axios from 'axios';
 import './event.css'; // Add appropriate styles
 import Navbar from '../Home/NavBar';
 import Footer from '../Home/Footer';
+import Hero from './Hero-sec';
 
-const Foundation = () => {
+const Collection = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);
     const [eventBlogs, setEventBlogs] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -33,21 +34,34 @@ const Foundation = () => {
     const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
     const currentBlogs = eventBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % latestBlogs.length);
+        }, 3000); // Change slide every 3 seconds
+        return () => clearInterval(interval);
+    }, [latestBlogs]);
+
     return (
         <div>
         <Navbar></Navbar>
+        <section className="slider">
+            {latestBlogs.map((blog, index) => (
+                <div
+                    key={index}
+                    className={`slider-item ${index === currentIndex ? "active" : ""}`}
+                    style={{ backgroundImage: `url(${blog.imageUrl})` }}
+                >
+                    <div className="slider-content">
+                        <h2>{blog.title}</h2>
+                        <div dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 100) + "..." }} />
+                    </div>
+                </div>
+            ))}
+        </section>
         <div className="container">
             {/* Slider Section */}
-            <section className="slider">
-                {latestBlogs.map((blog, index) => (
-                    <div key={index} className="slider-item" style={{ backgroundImage: `url(${blog.imageUrl})` }}>
-                        <div className="slider-content">
-                            <h2>{blog.title}</h2>
-                            <div dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 100) + "..." }} />
-                        </div>
-                    </div>
-                ))}
-            </section>
 
             {/* Event Blogs Section */}
             <section className="event-blogs">
@@ -83,4 +97,4 @@ const Foundation = () => {
     );
 };
 
-export default Foundation;
+export default Collection;

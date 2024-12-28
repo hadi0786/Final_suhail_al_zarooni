@@ -10,11 +10,11 @@ import StatSection from '../About/Stats';
 
 function About() {
   const logos = [
-    { id: 1, image: "/logo1.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
-    { id: 2, image: "/logo2.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
-    { id: 3, image: "/logo3.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
-    { id: 4, image: "/logo4.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
-    { id: 5, image: "/logo5.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
+    { id: 1, image: "/8.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
+    { id: 2, image: "/9.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
+    { id: 3, image: "/10.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
+    { id: 4, image: "/11.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
+    { id: 5, image: "/12.png", detail: "Suhail Mohd Al Zarooni is a Guinness World Record holder, An Emirati Collector, An Author & Businessman from Dubai, United Arab Emirates. He had born November 16, 1968. He is the son of Mohammad Abdul Karim Al Zarooni." },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,7 +30,7 @@ function About() {
   const styles = {
     heroSec: {
       width: '100%',
-      padding: '20px',
+      padding: '30px',
       backgroundImage: "url('/about.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -79,17 +79,16 @@ function About() {
               </button>
             </div>
           </div>
-
           <div className="Zarooni-img">
             <img src="/profile.png" alt="Suhail Mohammed Al Zarooni" />
           </div>
         </div>
       </div>
-      <AllArticles></AllArticles>
-      <RewardsSection></RewardsSection>
-      <PalaceSection></PalaceSection>
       <StatSection></StatSection>
       <ArticlesPage></ArticlesPage>
+      <RewardsSection></RewardsSection>
+      <PalaceSection></PalaceSection>
+      <AllArticles></AllArticles>
       <div className="subscribe-section">
         <button className="subscribe-buttons">SUBSCRIBE</button>
         <p className="subscribe-text">Subscribe Newsletter to stay updated</p>

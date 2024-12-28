@@ -65,6 +65,18 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
         }
     });
 
+    app.get('/slides', async (req, res) => {
+        try {
+            // Fetch articles where category is 'slider'
+            const slides = await ArticleModel.find({ category: 'slider' }).sort({ createdAt: -1 });
+            res.status(200).json({ data: slides });
+        } catch (err) {
+            console.error("Error fetching slides:", err);
+            res.status(500).json({ message: 'Server error' });
+        }
+    });
+    
+
     app.get('/articles', async (req, res) => {
         try {
             const articles = await ArticleModel.find().sort({ createdAt: -1 }); // Fetch all articles, sorted by creation date

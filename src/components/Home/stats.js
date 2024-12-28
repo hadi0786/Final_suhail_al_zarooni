@@ -9,7 +9,7 @@ const StatSection = () => {
       img: "/album1.jpg",
       title: "Album of Excellency Visit in Pakistan",
       description:
-        "Actor, director, producer, and screenwriter Usman Peerzada was joined by His Excellency Suhail Mohammed Al Zarooni!",
+        "Actor, director, producer, and screenwriter Usman Peerzada was joined ",
     },
     {
       img: "/album2.jpg",
@@ -21,7 +21,7 @@ const StatSection = () => {
       img: "/album3.jpg",
       title: "Cultural Exchange Program",
       description:
-        "Highlighting the strong bonds of friendship and collaboration during Suhail Mohammed Al Zarooni's global tours.",
+        "Highlighting the strong bonds of friendship and collaboration during ",
     },
   ];
 

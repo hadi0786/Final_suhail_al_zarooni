@@ -36,15 +36,22 @@ body {
   
   /* Logo Section */
   .logo-section {
-    text-align: center;
-    margin: 40px 0;
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* Optional: Set height if needed to center within the viewport */
   }
+  
   
   .logo-section-title {
     font-size: 2.5rem;
     font-family: "Old English Text MT", serif;
     color: #001366;
     margin-bottom: 20px;
+  }
+
+  .cardr-text{
+    color: white !important;
   }
   
   .logo-slider {
@@ -90,12 +97,26 @@ body {
   
   .description-text {
     font-family: 'Georgia', serif;
-    font-size: 3rem;
+    font-size: 3rem; /* Default font size for larger screens */
     color: #4b0000;
     font-style: italic;
     line-height: 1.5;
     margin: 0;
   }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .description-text {
+      font-size: 2rem; /* Adjust the font size for mobile devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .description-text {
+      font-size: 1.5rem; /* Further reduce font size for very small screens */
+    }
+  }
+  
   
   /* Grid Container */
   .profile-section {
@@ -550,14 +571,15 @@ width: 100%;
     margin-top: 20px;
     background-color: #ffffff;
     color: #002366;
-    padding: 15px;
+    padding: 1rem; /* Padding in rem for scalability */
     border-radius: 10px;
-    width: 560px;
+    width: 35rem; /* Fixed width in rem for consistent sizing */
     display: flex;
-    gap: 15px;
+    gap: 1rem; /* Space between child elements */
     margin-bottom: 20px;
-    justify-content:start; /* Aligns content in the card to the right */
+    justify-content: start; /* Aligns content in the card to the left */
     text-align: justify;
+    font-size: 1rem; /* Base font size in rem */
   }
   
   .card-img img {
@@ -612,7 +634,7 @@ width: 100%;
   
   .right-section {
     flex: 0 0 auto;
-    max-width: 400px;
+    max-width: 510px;
     margin-left: auto;
     text-align: right; /* Aligns the image and its container to the right */
   }

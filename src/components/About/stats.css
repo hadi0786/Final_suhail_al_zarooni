@@ -1,25 +1,48 @@
 .stats-section {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #010854; /* Navy blue background */
+  color: white;
+  padding: 40px 20px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+  margin: 20px; /* Adds spacing between items */
+  flex: 1 1 100px; /* Ensures items shrink or grow evenly */
+}
+
+.stat-value {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column; /* Stacks items vertically */
     align-items: center;
-    background-color: #000080; /* Navy blue background */
-    color: white;
-    padding: 40px 0;
   }
-  
+
   .stat-item {
-    text-align: center;
-    color: white;
+    flex: 1 1 auto; /* Adjusts the sizing of items */
+    margin: 10px 0; /* Reduces spacing for better mobile fit */
   }
-  
+
   .stat-value {
-    color: white;
-    font-size: 2rem;
-    margin: 0;
+    font-size: 1.8rem; /* Slightly smaller font for better scaling */
   }
-  
+
   .stat-label {
-    font-size: 1rem;
-    margin: 0;
+    font-size: 0.9rem; /* Adjust font size for labels */
   }
-  
+}

@@ -1,0 +1,14 @@
+.logo-container {
+    text-align: center;
+    overflow: hidden; /* Ensures no content overflows */
+  }
+
+  .tc{
+    font-family: "Old English Text MT", serif;
+    font-size: 30px;
+  }
+  
+  .slider-wrapper {
+    overflow: hidden; /* Hides any overflow from the slider */
+  }
+  

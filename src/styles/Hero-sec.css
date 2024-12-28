@@ -3,9 +3,7 @@
 .detail {
     font-size: 36px;
     color: #520000; /* Adjusted to match a darker background image */
-    margin-bottom: 25px;
     text-align: center;
-    line-height: 1.5;
     font-family: 'Playfair Display', serif;
     font-style: italic;
     
@@ -26,7 +24,6 @@
 
 .logo-detail {
     font-size: 22px;
-    margin-bottom: 20px;
     text-align: justify;
     color: #000000; /* Matches the background */
     font-family: 'Poppins', sans-serif;

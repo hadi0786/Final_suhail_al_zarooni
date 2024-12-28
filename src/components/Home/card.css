@@ -1,0 +1,150 @@
+.card-section {
+  --primary: #001366; /* Softer shade for a polished look */
+  --white: #ffffff;
+  --bg: #fafafa; /* Lighter background for a clean look */
+  --gray: #d6d6d6;
+  --dark-gray: #555555; /* Dark gray for subtle text */
+}
+
+.card-section {
+  background: var(--bg);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  max-height: 70vh;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-section .heading {
+  font-family: "Old English Text MT", serif;
+  padding: 1rem 0;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 0.08rem;
+  overflow-wrap: break-word;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.card-section .swiper_container {
+  height: auto;
+  padding: 2rem 0;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.card-section .swiper-slide {
+  width: 28rem;
+  height: auto;
+  margin: 1rem auto;
+  border: 1px solid var(--gray);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-section .swiper-slide:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-section .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-section .swiper-slide img:hover {
+  transform: scale(1.08); /* More pronounced zoom */
+}
+
+.card-section .slider-controler {
+  position: absolute;
+  bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.card-section .slider-controler .slider-arrow {
+  background: var(--primary);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(18, 28, 53, 0.1);
+  transition: background 0.3s ease;
+}
+
+.card-section .slider-controler .slider-arrow:hover {
+  background: #041d8f; /* Darker shade for hover */
+}
+
+.card-section .slider-controler .slider-arrow ion-icon {
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.card-section .swiper-pagination {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-section .swiper-pagination .swiper-pagination-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--gray);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card-section .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+  transform: scale(1.2); /* Active state emphasis */
+}
+
+@media (max-width: 768px) {
+  .card-section {
+    min-height: 55vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .card-section .swiper-slide {
+    width: 22rem;
+  }
+
+  .card-section .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-section {
+    min-height: 60vh;
+  }
+
+  .card-section .swiper-slide {
+    width: 18rem;
+  }
+
+  .card-section .heading {
+    font-size: 2.5rem;
+  }
+}

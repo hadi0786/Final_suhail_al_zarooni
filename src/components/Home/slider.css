@@ -1,0 +1,45 @@
+.section-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card, .cardr {
+    background-color: #800000;
+    color: white;
+    padding: 20px;
+    width: 100%; /* Allow cards to adapt to screen width */
+    max-width: 365px; /* Limit maximum width */
+    height: 300px;
+    border-radius: 20px;
+    text-align: justify;
+    margin: 0 auto; /* Center the card horizontally */
+  }
+  
+  .card-text {
+    font-size: 27px;
+  }
+  
+  .middle, .card-image {
+    width: 100%;
+    max-width: 370px; /* Limit maximum width for images */
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+  }
+  
+  /* Media Query for Mobile Screens */
+  @media screen and (max-width: 768px) {
+    .card, .cardr {
+      width: calc(100% - 40px); /* Reduce width to fit inside padding */
+    }
+  
+    .card-image {
+      width: calc(100% - 40px); /* Reduce width to fit inside padding */
+      max-width: 370px;
+    }
+  }
+  .cardright{
+    background-color: #010854;
+  }
+  

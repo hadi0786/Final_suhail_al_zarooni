@@ -9,6 +9,54 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+/>
+
+<script>
+  
+
+let active_slide = 0;
+const coverSlider = document.getElementById("cover-slider");
+const slides = coverSlider.querySelectorAll(".slider-cover");
+const leftBtn = document.getElementById("slider-left-btn");
+const rightBtn = document.getElementById("slider-right-btn");
+
+leftBtn.addEventListener('click', e => {
+  moveSlider(-1);
+});
+
+rightBtn.addEventListener('click', e => {
+  moveSlider(1);
+});
+
+function moveSlider(direction) {
+
+    if (direction > 0) {
+      
+        active_slide = (active_slide + 1) % slides.length;
+        showSlide(active_slide);
+
+    } else {
+ 
+        active_slide = (active_slide - 1 + slides.length) % slides.length;
+        showSlide(active_slide);
+
+    }
+
+}
+
+function showSlide(index) {
+  console.log(index)
+  slides.forEach(slide => {
+    slide.classList.remove("active");
+  })
+  slides[index].classList.add("active");
+}
+</script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ahsing&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
