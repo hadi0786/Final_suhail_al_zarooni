@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import BASE_URL from './BaseUrl';
 import './AllArticle.css';
 
 const Article = () => {
@@ -8,7 +9,7 @@ const Article = () => {
   // Fetch articles from the server
   const fetchArticles = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/articles');
+      const response = await axios.get(`${BASE_URL}/articles`);
       setArticles(response.data.data);
     } catch (error) {
       console.error("Error fetching articles:", error);
@@ -18,7 +19,7 @@ const Article = () => {
   // Delete an article by ID
   const deleteArticle = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/articles/${id}`);
+      await axios.delete(`${BASE_URL}/articles/${id}`);
       alert('Article deleted successfully!');
       fetchArticles(); // Refresh articles after deletion
     } catch (error) {

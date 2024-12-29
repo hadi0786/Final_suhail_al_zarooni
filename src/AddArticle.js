@@ -21,7 +21,7 @@ const AddArticle = () => {
         formData.append('image', image);
 
         try {
-            const response = await axios.post('http://localhost:5000/articles', formData, {
+            const response = await axios.post(`${BASE_URL}/articles`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             setMessage(response.data.message);
