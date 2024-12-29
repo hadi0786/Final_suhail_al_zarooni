@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/sliders.css";
+import BASE_URL from "../../BaseUrl";
 
 const AllArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -18,7 +19,7 @@ const AllArticles = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/articles");
+        const response = await axios.get(`${BASE_URL}/articles`);
         const fetchedArticles = response.data.data;
         setArticles(fetchedArticles);
         setFilteredArticles(fetchedArticles); // Show all articles by default
