@@ -20,6 +20,7 @@ import Collection from "./components/events/Collection";
 import Museum from "./components/events/Museum"
 import Media from "./components/events/Media"
 import Foundation from "./components/events/foundation"
+import Register from "./components/Dashboard/Register";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="*" element={<Navigate to="/home" replace={true} />} />
           <Route path="/adminlogin" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/admindashboard" element={<AdminDashboard/>} />
         </Routes>
       </div>

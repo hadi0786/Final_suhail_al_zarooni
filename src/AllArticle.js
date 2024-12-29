@@ -1,16 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import BASE_URL from './BaseUrl';
-import './AllArticle.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "react-slideshow-image/dist/styles.css";
+import "./AllArticle.css";
+import { Modal } from "antd";
+import BASE_URL from "./BaseUrl";
 
 const Article = () => {
   const [articles, setArticles] = useState([]);
+  const [filterArticle, setFitlerArticle] = useState([]);
+  const [content, setContent] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [category, setCategory] = useState('');
+  const showModal = (val) => {
+    setContent(val)
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   // Fetch articles from the server
   const fetchArticles = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/articles`);
       setArticles(response.data.data);
+      setFitlerArticle(response.data.data);
     } catch (error) {
       console.error("Error fetching articles:", error);
     }
@@ -20,43 +39,107 @@ const Article = () => {
   const deleteArticle = async (id) => {
     try {
       await axios.delete(`${BASE_URL}/articles/${id}`);
-      alert('Article deleted successfully!');
+      alert("Article deleted successfully!");
       fetchArticles(); // Refresh articles after deletion
     } catch (error) {
       console.error("Error deleting article:", error);
-      alert('Error deleting the article.');
+      alert("Error deleting the article.");
     }
   };
 
   useEffect(() => {
     fetchArticles();
   }, []);
+  const handleCategory=(val)=>{
+    const filterList=articles.filter((item)=>item.category===val)
+    setCategory(val)
+    console.log(val,filterList)
+    // setArticles(filterList)
+    setFitlerArticle(filterList)
+  }
+console.log(articles)
 
   return (
+    <>
+
+  
     <div className="article-container">
-      <h1 className="page-title">All Articles</h1>
-      <div className="cards-container">
-        {articles.map((article) => (
-          <div key={article._id} className="card">
-            <img src={article.imageUrl} alt={article.title} className="card-image" />
-            <div className="card-content">
-              <h2 className="card-title">{article.title}</h2>
-              <p className="card-category">Category: {article.category}</p>
-              <div 
-                className="card-text"
-                dangerouslySetInnerHTML={{ __html: article.content }} 
-              />
-              <button 
+    <h1 className="page-title">All Articles</h1>
+    <div className="flexContainer"> 
+
+<div className="article-form-group">
+    <label htmlFor="category" className="article-label">Category</label>
+    <select
+        className="article-select"
+        id="category"
+        value={category}
+        onChange={(e) => handleCategory(e.target.value)}
+        required
+    >
+        <option value="">Select Category</option>
+        <option value="event">Event</option>
+        <option value="foundation">Foundation</option>
+        <option value="collection">Collection</option>
+        <option value="museum">Museum</option>
+        <option value="media">Media</option>
+        <option value="guest">Guest</option>
+        <option value="about">About Us</option>
+        <option value="bollywood">Bollywood</option>
+        <option value="hollywood">Hollywood</option>
+        <option value="pakistani">Pakistani</option>
+        <option value="update">Update</option>
+    </select>
+</div>
+
+</div>
+      <div class="Allcontainer">
+      {filterArticle.map((article) => (
+  <div class="card">
+    <div class="card__header" onClick={()=>showModal(article.content)}>
+      <img   src={article.imageUrl}
+              alt={article.title} class="card__image" width="100%"/>
+    </div>
+    <div class="card__body" onClick={()=>showModal(article.content)}>
+      <span class="tag tag-blue">{article.category}</span>
+      <h4>{article.title}</h4>
+    
+      {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p> */}
+    </div>
+    <div className="buttonAlign">
+      <button
                 className="delete-button"
                 onClick={() => deleteArticle(article._id)}
               >
-                🗑 Delete
+                 Delete
               </button>
-            </div>
-          </div>
-        ))}
+              <button
+                className="delete-button"
+                onClick={() => deleteArticle(article._id)}
+              >
+                Approve
+              </button>
+              </div>
+    <div class="card__footer">
+      <div class="user">
+        <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image"/>
+        <div class="user__info">
+          <h5>Jane Doe</h5>
+          <small>{article.createdAt.split("T")[0]}</small>
+        </div>
       </div>
     </div>
+  </div>))}
+  {filterArticle.length===0&&
+  <h1>No Article Found</h1>}
+  </div>
+    </div>
+    <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+    <div
+               
+                dangerouslySetInnerHTML={{__html: content}}
+              />
+      </Modal>
+    </>
   );
 };
 
