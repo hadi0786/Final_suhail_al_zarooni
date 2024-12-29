@@ -55,7 +55,7 @@ const Event = () => {
                     style={{ backgroundImage: `url(${blog.imageUrl})` }}
                 >
                     <div className="slider-content">
-                        <h2>{blog.title}</h2>
+                        <h2 class="blogtitle">{blog.title}</h2>
                         <div dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 100) + "..." }} />
                     </div>
                 </div>
@@ -66,7 +66,7 @@ const Event = () => {
 
             {/* Event Blogs Section */}
             <section className="event-blogs">
-                <h2 className="section-title">Al Zarooni Media</h2>
+                <h2 className="section-title sectitle">Al Zarooni Events</h2>
                 <div className="blog-grid">
                     {currentBlogs.map((blog) => (
                         <div className="blog-card" key={blog._id}>

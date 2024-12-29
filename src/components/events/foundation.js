@@ -4,6 +4,7 @@ import './event.css'; // Add appropriate styles
 import Navbar from '../Home/NavBar';
 import Footer from '../Home/Footer';
 import Hero from './Hero-sec';
+import BASE_URL from '../../BaseUrl';
 
 const Foundation = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);

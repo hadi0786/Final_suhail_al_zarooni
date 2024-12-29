@@ -110,7 +110,7 @@ const styles = {
     position: "relative",
   },
   textSection: {
-    padding: "20px",
+    padding: "50px",
   },
   title: {
     textAlign: "left",

@@ -1,21 +1,33 @@
 .container {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
 }
 
 .section-title {
-    font-size: 28px;
+    font-size: 40px;
+    font-family: 'Ahsing', sans-serif;
+    color: #001366;
     font-weight: bold;
     text-align: left;
     margin: 40px 0;
-    color: #333;
+}
+
+.sectitle{
+    color: #001366;
 }
 
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+.blogtitle{
+    font-size: 80px;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .blog-card {
