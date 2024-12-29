@@ -4,7 +4,6 @@
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    margin-bottom: 20px;
 }
 
 .logo-section {
@@ -27,7 +26,6 @@
     text-align: justify;
     color: #000000; /* Matches the background */
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 20px;
 }
 
 .logos {

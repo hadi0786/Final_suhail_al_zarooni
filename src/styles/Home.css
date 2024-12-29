@@ -206,17 +206,20 @@ body {
     border-bottom: 1px solid #010854;
     padding-bottom: 20px;
   }
+  .space{
+    height: 30px;
+  }
   
   /* Footer Columns */
   .footer-column {
     flex: 1;
     min-width: 200px;
   }
-  
+  @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Shrikhand&display=swap');
   .footer-title {
     font-size: 30px;
     font-weight: bold;
-    font-family: "Old English Text MT", serif;
+    font-family: "Shrikhand", serif;
   }
   
   .footer-description {
@@ -244,6 +247,10 @@ body {
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s;
+  }
+  .name{
+    width: 150px;
+    height: auto;
   }
   
   .footer-links a:hover {
@@ -647,40 +654,41 @@ width: 100%;
   @media (max-width: 768px) {
     .stat-section {
       flex-direction: column;
-      text-align: right; /* Keeps everything aligned right on smaller screens */
+      text-align: center; /* Better alignment for smaller screens */
     }
   
     .statcol {
       display: flex;
-      justify-content: flex-end; /* Aligns columns to the right */
-    }
-  
-    .stat-card {
-      flex-direction: column;
- width: 100% !important;
-    }
-  
-    .stats-row {
-      display: flex;
-      justify-content: flex-end; /* Keeps stats aligned to the right */
-      align-items: center;
-      background-color: #001a66;
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-  
-    .statcol {
+      justify-content: center; /* Centers columns for better UX */
       flex: 1;
-      text-align: right; /* Aligns stats text to the right */
+      text-align: center;
       border-right: 2px solid white;
     }
-    
+  
     .statcol:last-child {
       border-right: none;
     }
   
+    .stat-card {
+      flex-direction: column;
+      width: 90%; /* Adjusted width for cleaner alignment */
+      margin: 0 auto;
+      padding: 0;
+    }
+  
+    .stats-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content */
+      align-items: center;
+      background-color: #001a66;
+      padding: 15px;
+      border-radius: 8px;
+      gap: 10px; /* Added gap for better spacing */
+    }
+  
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: white;
     }
@@ -690,76 +698,63 @@ width: 100%;
       font-weight: 500;
       color: #ffd700;
       margin-top: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   
- .stats-row{
-  gap: 5px;
-  flex-direction: column;
-}
-.dot-container{
-width: 100%;
-}
-.vertical-line{
-
-background-color:#001a66;
-}
-.serv ul{
-flex-wrap: nowrap;
-}
-.middle{
-height: 100%;
-object-fit: cover;
-}
-.card-image{
-height: 100%;
-object-fit: cover;
-}
-.left-section{
-width: 100%;
-padding: 0;
-}
-
-.stat-title{
-width: 100%;
-}
-.stat-card{
-padding: 0;
-margin: 0rem;
-}
-.card-img{
-width: 100%;
-}  .card-content {
-text-align: center; /* Aligns text inside card content to the right */
-}
-.icon{
-align-items: end;
-display: flex
-;
-justify-content: end;
-padding:1rem
-}
-.dot-container{
-margin-top: 1rem;
-}
-.intro-video{
-height: auto;
-}
-.stat-title h2 {
-font-size: 1.5rem;
-text-align: center;
-}
-    .card-img img {
+    .dot-container {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    .vertical-line {
+      background-color: #001a66;
+    }
+  
+    .serv ul {
+      flex-wrap: nowrap;
+    }
+  
+    .middle, .card-image, .card-img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    .left-section, .right-section, .stat-title {
+      width: 100%;
+      padding: 0;
+      text-align: center; /* Centers text for mobile */
+      margin: 0 auto;
+    }
+  
+    .card-content {
+      text-align: center;
+      padding: 1rem;
+    }
+  
+    .icon {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 1rem;
+    }
+  
+    .stat-title h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    .intro-video {
+      height: auto;
       width: 100%;
     }
   
-    .right-section {
-      margin-left: 0;
-      text-align: right;
+    .stat-card {
+      padding: 0;
+      margin: 0;
     }
   }
+  
   
   .golden {
     color: #e4bf51;

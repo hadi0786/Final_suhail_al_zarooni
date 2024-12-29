@@ -1,5 +1,7 @@
 import { RightCircleOutlined } from "@ant-design/icons";
 import React, { useState, useEffect } from "react";
+import CountUp from "react-countup";
+import "./stat.css"
 
 const StatSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +34,7 @@ const StatSection = () => {
 
     return () => clearInterval(interval); // Clean up the interval
   }, [cardData.length]);
-console.log(currentIndex)
+
   const currentCard = cardData[currentIndex];
 
   return (
@@ -41,9 +43,10 @@ console.log(currentIndex)
         <div className="stat-title">
           <h2 className="stat-title">Suhail Mohammed Al Zarooni</h2>
           <h2 className="stat-title">
-            <span className="golden">Guinness</span> World{" "}
-            <span className="golden">Record Holder</span>
-          </h2>
+            <span className="golden rotate-guinness">Guinness</span> World{" "}
+            <span className="golden rotate-record">Record Holder</span>
+            </h2>
+
         </div>
         <div className="stat-card">
           <div className="card-img">
@@ -57,32 +60,36 @@ console.log(currentIndex)
             <h4>{currentCard.title}</h4>
             <p>{currentCard.description}</p>
           </div>
-          <RightCircleOutlined className="icon"   twoToneColor="#000" />
+          <RightCircleOutlined className="icon" twoToneColor="#000" />
         </div>
-        <div class="dot-container">
-    <div class={currentIndex===1?"dot-active dot":"dot"}></div>
-    <div class={currentIndex===2?"dot-active dot":"dot"}></div>
-    <div class={currentIndex===3?"dot-active dot":"dot"}></div>
-    <div class={currentIndex===4?"dot-active dot":"dot"}></div>
- 
-  </div>
+        <div className="dot-container">
+          <div className={currentIndex === 1 ? "dot-active dot" : "dot"}></div>
+          <div className={currentIndex === 2 ? "dot-active dot" : "dot"}></div>
+          <div className={currentIndex === 3 ? "dot-active dot" : "dot"}></div>
+          <div className={currentIndex === 4 ? "dot-active dot" : "dot"}></div>
+        </div>
         <div className="stats-row">
-  <div className="statcol">
-    <div className="stat-number">1</div>
-    <div className="stat-label">World Record Holder</div>
-    <div class="vertical-line"></div>
-
-  </div>
-  <div className="statcol">
-    <div className="stat-number">45</div>
-    <div className="stat-label">National Award Holder</div>
-    <div className="vertical-line"></div>
-  </div>
-  <div className="statcol">
-    <div className="stat-number">10k+</div>
-    <div className="stat-label">Followers On Social Media</div>
-  </div>
-</div>
+          <div className="statcol">
+            <div className="stat-number">
+              <CountUp start={0} end={1} duration={2} />
+            </div>
+            <div className="stat-label">World Record Holder</div>
+            <div className="vertical-line"></div>
+          </div>
+          <div className="statcol">
+            <div className="stat-number">
+              <CountUp start={0} end={45} duration={2} />
+            </div>
+            <div className="stat-label">National Award Holder</div>
+            <div className="vertical-line"></div>
+          </div>
+          <div className="statcol">
+            <div className="stat-number">
+              <CountUp start={0} end={100} duration={2} separator="," />
+            </div>
+            <div className="stat-label">Followers On Social Media</div>
+          </div>
+        </div>
       </div>
       <div className="right-section">
         <img

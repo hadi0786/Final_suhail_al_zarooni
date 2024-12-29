@@ -35,13 +35,12 @@ const AlZaroonisWorld = () => {
     <div
       style={{
         textAlign: "center",
-        color: "#010854",
-        fontFamily: "Old English Text MT",
+        fontFamily: "Ahsing",
         overflow: "hidden", // Hide overflow
         padding:"40px",
       }}
     >
-      <h2>Explore Al Zarooni's World</h2>
+      <h2 class="text-world">Explore Al Zarooni's World</h2>
       <div className="slider-wrapper" style={{ overflow: "hidden" }}>
         <Slider {...settings}>
           {logos.map((logo, index) => (

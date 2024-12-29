@@ -4,8 +4,15 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import "./card.css";
 
 function Card() {
+  const cardSectionStyle = {
+    backgroundImage: 'url(/about.jpg)', // Replace with your image path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+
   return (
-    <div className="card-section">
+    <div className="card-section" style={cardSectionStyle}>
       <div className="container">
         <h1 className="heading">Zarooni's Social Media</h1>
         <Swiper
@@ -52,12 +59,6 @@ function Card() {
           </SwiperSlide>
 
           <div className="slider-controler">
-            {/* <div className="swiper-button-prev slider-arrow">
-              <ion-icon name="arrow-back-outline"></ion-icon>
-            </div>
-            <div className="swiper-button-next slider-arrow">
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </div> */}
             <div className="swiper-pagination"></div>
           </div>
         </Swiper>

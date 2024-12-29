@@ -4,6 +4,7 @@ import "../../styles/Home.css";
 const Footer = () => {
   return (
     <footer className="footer-section">
+      <div class="space"></div>
       <div className="footer-content">
         {/* Left Column */}
         <div className="footer-column">
@@ -56,6 +57,7 @@ const Footer = () => {
               <img src="/6.png" alt="WhatsApp" height="40px" width="40px" />
             </a>
           </div>
+          <img src="/name.png" class="name"/>
         </div>
       </div>
 

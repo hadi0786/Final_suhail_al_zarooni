@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'Ahsing';
+  src: url('../Font/Ahsing-Regular.otf') format('opentype');
+}
+
 /* General Overflow Prevention */
 *{
   margin: 0;
