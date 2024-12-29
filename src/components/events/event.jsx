@@ -4,6 +4,7 @@ import './event.css'; // Add appropriate styles
 import Navbar from '../Home/NavBar';
 import Footer from '../Home/Footer';
 import Hero from './Hero-sec';
+import BASE_URL from '../../BaseUrl';
 
 const Event = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);
@@ -15,7 +16,7 @@ const Event = () => {
         // Fetch all articles
         const fetchArticles = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/articles');
+                const { data } = await axios.get(`${BASE_URL}/articles`);
                 const filteredBlogs = data.data.filter(blog => blog.category === 'event');
                 setLatestBlogs(filteredBlogs.slice(0, 3));
                 setEventBlogs(filteredBlogs);

@@ -15,7 +15,7 @@ const Foundation = () => {
         // Fetch all articles
         const fetchArticles = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/articles');
+                const { data } = await axios.get(`${BASE_URL}/articles`);
                 const filteredBlogs = data.data.filter(blog => blog.category === 'foundation');
                 setLatestBlogs(filteredBlogs.slice(0, 3));
                 setEventBlogs(filteredBlogs);
